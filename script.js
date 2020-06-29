@@ -74,10 +74,10 @@ function generatePassword() {
     // Password generated to the text area
     document.getElementById("password").innerHTML = result;
     // Enabling clipboard after password is generated
-    document.getElementById("clipboardButton").disabled = false;
+    document.getElementById("copyClipboard").disabled = false;
 }
 
-// Clipboard function
+// Clipboard copy function
 function copyClipboard() {
     // Create the variable copyPassword and link is to the element "password"
     var copyPassword = document.getElementById("password");
