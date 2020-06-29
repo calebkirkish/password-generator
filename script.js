@@ -85,5 +85,5 @@ function copyClipboard() {
     copyPassword.setSelectionRange(0, 99999);
     document.execCommand("copy");
     // Create an alert that the password has been copied
-    alert("Copied the password" + copyPassword.value);
+    alert("Copied the password " + copyPassword.value);
 }
