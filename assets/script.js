@@ -20,7 +20,7 @@ function generatePassword() {
 
     //  If password length is shorter than 8 OR longer than 128 characters alert pops
     if (passLength < 8 || passLength > 128) {
-        alert("password length should be greater than 8 characters");
+        alert("password length should be greater than 8 characters or less than 128");
     }
 
     // Run Boollean if these conditions for the length of the password are confirmed
@@ -43,17 +43,16 @@ function generatePassword() {
 
         // What do we want in our pot of info
         if (confirmLowerCase === true) {
-            thePot = thePot.concat(lowerCase);
-            console.log(thePot);
+            Array.prototype.push.apply(thePot, lowerCase);
         }
         if (confirmUpperCase === true) {
-            thePot = thePot.concat(upperCase);
+            Array.prototype.push.apply(thePot, upperCase);
         }
         if (confirmNumbers === true) {
-            thePot = thePot.concat(num);
+            Array.prototype.push.apply(thePot, num);
         }
         if (confirmSpecialChars === true) {
-            thePot = thePot.concat(specialChars);
+            Array.prototype.push.apply(thePot, specialChars);
             console.log(thePot);
         }
         if (thePot.length === 0) {
@@ -64,7 +63,7 @@ function generatePassword() {
             console.log(thePot.length);
             for (i = 0; i < passLength; i++) {
 
-                var randomPot = thePot[Math.round(Math.random() * thePot.length)];
+                var randomPot = thePot[Math.floor(Math.random() * thePot.length)];
                 result = result + randomPot;
 
             }
